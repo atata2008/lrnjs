@@ -60,14 +60,75 @@
 
 //ex.3 Print the multiplication table from 1 to 5 to the console
 
-for (let j = 1; j <= 5; j++) {
-     console.log('\non '+j+'\n\n');
-    for (let i = 1; i <= 10; i++) {
-        console.log(i + ' x ' + j + ' = ' + (i * j));
+// for (let j = 1; j <= 5; j++) {
+//      console.log('\non '+j+'\n\n');
+//     for (let i = 1; i <= 10; i++) {
+//         console.log(i + ' x ' + j + ' = ' + (i * j));
+//     }
+
+// }
+// console.log('\n well done');
+
+//ex.4 Create a function that will take an array and return an array with 3 elements: length, first and last elements.
+
+// function getArrayBounds(arr) {
+//        if (typeof arr === "object") {
+//         let arrNew = [];
+//         arrNew[0] = arr.length;
+//         arrNew[1] = arr[0];
+//         arrNew[2] = arr[arr.length - 1];
+//         return arrNew;
+//     } else {
+//         return null;
+//     }
+// }
+
+// let yearsOfDates = [1, 2, 3, 4, 1971, 199965];
+// /*const yearsOfDates = 'mmmm';*/
+// console.log(getArrayBounds(yearsOfDates));
+
+//ex.5 Create a funtion that will take an array and return a sum of all elements.
+
+// function getSum(arr) {
+//     if (!Array.isArray(arr)) {
+//         return null;
+//     } else {
+//         let sum = 0;
+//         for (let i of arr) {
+//             sum++;
+//         }
+//         return sum
+//     }
+// }
+// let yearsOfDates = [1, 2, 3, 4, 1971, 199965];
+// const yearsOfDates2 = 'mmmm';
+// console.log('sum all elements of array = ' + getSum(yearsOfDates2));
+
+//ex.3 Find enements of array these these are divisible by 3 without remainder.
+
+function getSpecialArray(max, min) {
+    let arrSpecialNum = [], n = 0;
+    for (let i = min; i <= max; i++) {
+        if (i % 3 === 0) {
+            arrSpecialNum[n] = i;
+            n++;
+        }
     }
+    return arrSpecialNum;
+}
+
+function getSpecialNumbers(m, n) {
+    let areSpecialNumbers = [];
+    if (m > n) {
+        areSpecialNumbers = getSpecialArray(m, n);
+    } else {
+        areSpecialNumbers = getSpecialArray(n, m);
+    }
+    return areSpecialNumbers;
 
 }
-console.log('\n well done');
+
+console.log(getSpecialNumbers(5, 51));
 
 // let arr = [];
 // function getSpecialNumbers(arr) {
@@ -82,4 +143,3 @@ console.log('\n well done');
 // }
 // let myArr = [1, 2, 3, 5, 5, 56, 60, 99];
 // console.log(getSpecialNumbers(myArr));
-
