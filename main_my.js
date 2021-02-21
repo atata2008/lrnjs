@@ -104,31 +104,53 @@
 // const yearsOfDates2 = 'mmmm';
 // console.log('sum all elements of array = ' + getSum(yearsOfDates2));
 
-//ex.3 Find enements of array these these are divisible by 3 without remainder.
+//ex.6 Find enements of array these these are divisible by 3 without remainder.
 
-function getSpecialArray(max, min) {
-    let arrSpecialNum = [], n = 0;
-    for (let i = min; i <= max; i++) {
-        if (i % 3 === 0) {
-            arrSpecialNum[n] = i;
-            n++;
-        }
-    }
-    return arrSpecialNum;
-}
+// function getSpecialArray(max, min) {
+//     let arrSpecialNum = [], n = 0;
+//     for (let i = min; i <= max; i++) {
+//         if (i % 3 === 0) {
+//             arrSpecialNum[n] = i;
+//             n++;
+//         }
+//     }
+//     return arrSpecialNum;
+// }
 
-function getSpecialNumbers(m, n) {
-    let areSpecialNumbers = [];
-    if (m > n) {
-        areSpecialNumbers = getSpecialArray(m, n);
-    } else {
-        areSpecialNumbers = getSpecialArray(n, m);
-    }
-    return areSpecialNumbers;
+// function getSpecialNumbers(m, n) {
+//     let areSpecialNumbers = [];
+//     if (m > n) {
+//         areSpecialNumbers = getSpecialArray(m, n);
+//     } else {
+//         areSpecialNumbers = getSpecialArray(n, m);
+//     }
+//     return areSpecialNumbers;
 
-}
+// }
+// console.log(getSpecialNumbers(5, 51));
 
-console.log(getSpecialNumbers(5, 51));
+//ex.7_a Create a function 'swap' that will take array. The first array element will send to end, and also the function will return the result.
+
+// function swap(arr) {
+//     let element = arr[0];
+//     arr.push(element);
+//     arr.shift();
+//     return arr;
+// }
+
+// const myNames = ['Lusy', 'Tatyana', 'Nora'];
+
+// console.log(swap(myNames));
+
+//ex.7_b (Array destructuring and spread-operator)
+
+// function swap2(array) {
+//     let [a, ...ather] = array;
+//     return [...ather, a];
+// }
+// let myNumbers = [1, 10, 100];
+
+// console.log(swap2(myNumbers));
 
 // let arr = [];
 // function getSpecialNumbers(arr) {
