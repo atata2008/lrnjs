@@ -15,9 +15,11 @@ const personalMovieDB = {
     resumePersonalOfFilm: function () {
         if (personalMovieDB.count > 30) {
             alert('Произошла ошибка');
-            } else if (personalMovieDB.count < 10) {
+        } else if (personalMovieDB.count < 10) {
             alert('Просмотрено мало фильмов');
-        } else { alert('Вы классический зритель'); }
+        } else {
+            alert('Вы классический зритель');
+        }
     },
     personalInformationOfFilm: function () {
         for (let i = 0; i < personalMovieDB.count && i < 3; i++) {
@@ -26,33 +28,35 @@ const personalMovieDB = {
             if (lastFilm != null && lastFilm != '' && lastFilm.length < 50) {
                 personalMovieDB.movies[lastFilm] = gradeOfFilm;
                 console.log('done');
-            } else { i--; }
+            } else {
+                i--;
+            }
         }
     },
-    writeYourGenres: function() {
+    writeYourGenres: function () {
         let i = 0;
-            while (i < 3) {
-            let myGenre = prompt('What is your lovely genre №' + (i+1) + '?', '');
+        while (i < 1) {
+            let myGenre = prompt('Write your lovely genres comma separated:');
             if (myGenre != null && myGenre != '') {
-                personalMovieDB.genres[i] = myGenre;
+                personalMovieDB.genres = myGenre.split(',');
+                personalMovieDB.genres.sort();
+                i++;
             }
-            i++;
         }
-        personalMovieDB.genres.forEach((item,i) => {
-        console.log(`Любимый жанр № ${i + 1} => ${item}`);
+        personalMovieDB.genres.forEach((item, i) => {
+            console.log(`Любимый жанр № ${i + 1} => ${item}`);
         });
     },
-    showMyDB: function(hidden) {
+    showMyDB: function (hidden) {
         if (!hidden) {
             console.log(personalMovieDB);
         }
     },
-    toggleVisibleMyDB: function() {
-        if  (personalMovieDB.privat) {
+    toggleVisibleMyDB: function () {
+        if (personalMovieDB.privat) {
             personalMovieDB.privat = false;
         } else {
             personalMovieDB.privat = true;
+        }
     }
-}
 };
-
