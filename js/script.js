@@ -38,11 +38,21 @@ const personalMovieDB = {
             }
             i++;
         }
+        personalMovieDB.genres.forEach((item,i) => {
+        console.log(`Любимый жанр № ${i + 1} => ${item}`);
+        });
     },
     showMyDB: function(hidden) {
         if (!hidden) {
             console.log(personalMovieDB);
         }
+    },
+    toggleVisibleMyDB: function() {
+        if  (personalMovieDB.privat) {
+            personalMovieDB.privat = false;
+        } else {
+            personalMovieDB.privat = true;
     }
+}
 };
 
